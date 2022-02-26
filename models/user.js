@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
+const User = new Schema({
     id: String ,
     name: String,
     lastname: String,
@@ -13,6 +13,6 @@ const userSchema = new Schema({
     role: String,
     dateOfBirth: String,
     project:[{name: String, client: String}],
-})
+});
 
 module.exports = mongoose.model("User", User);
