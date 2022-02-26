@@ -27,9 +27,6 @@ app.use(
 );
 app.use(cors());
 
-// Static directory path
-//app.use(express.static(path.join(__dirname, "dist/island_cook")));
-
 // API root
 app.use("/api", bookRoute);
 

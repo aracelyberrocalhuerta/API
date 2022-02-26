@@ -1,11 +1,11 @@
 const express = require("express");
 const app = express();
 
-const recipeRoute = express.Router();
+const userRoute = express.Router();
 let User = require("../models/user");
 
 // Add User
-recipeRoute.route("/user").post((req, res, next) => {
+userRoute.route("/user").post((req, res, next) => {
     User.create(req.body, (error, data) => {
         if (error) {
             return next(error);
@@ -16,7 +16,7 @@ recipeRoute.route("/user").post((req, res, next) => {
 });
 
 // Get User
-recipeRoute.route("/user").get((req, res, next) => {
+userRoute.route("/user").get((req, res, next) => {
     User.find((error, data) => {
         if (error) {
             return next(error);
@@ -27,7 +27,7 @@ recipeRoute.route("/user").get((req, res, next) => {
 });
 
 // Get UserbyID
-recipeRoute.route("/user/:id").get((req, res, next) => {
+userRoute.route("/user/:id").get((req, res, next) => {
     //con "tags:" se declara la parte del schema que quiero buscar equivalencia.
     User.find({id: req.params.tags}, (error, data) => {
         if (error) {
@@ -41,7 +41,7 @@ recipeRoute.route("/user/:id").get((req, res, next) => {
 
 
 // Update User
-recipeRoute.route("/user/:id").put((req, res, next) => {
+userRoute.route("/user/:id").put((req, res, next) => {
     User.findByIdAndUpdate(
         req.params.id,
         {
@@ -59,7 +59,7 @@ recipeRoute.route("/user/:id").put((req, res, next) => {
 });
 
 // Delete User
-recipeRoute.route("/recipe/:id").delete((req, res, next) => {
+userRoute.route("/recipe/:id").delete((req, res, next) => {
     User.findByIdAndRemove(req.params.id, (error, data) => {
         if (error) {
             return next(error);
@@ -71,4 +71,4 @@ recipeRoute.route("/recipe/:id").delete((req, res, next) => {
     });
 });
 
-module.exports = recipeRoute;
+module.exports = userRoute;
