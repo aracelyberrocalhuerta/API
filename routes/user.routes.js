@@ -38,7 +38,17 @@ userRoute.route("/user/:id").get((req, res, next) => {
     });
 });
 
-
+//getbyEmail
+userRoute.route("/user/:email").get((req, res, next) => {
+    //con "tags:" se declara la parte del schema que quiero buscar equivalencia.
+    User.find({email: req.params.tags}, (error, data) => {
+        if (error) {
+            return next(error);
+        } else {
+            res.json(data);
+        }
+    });
+});
 
 // Update User
 userRoute.route("/user/:id").put((req, res, next) => {
