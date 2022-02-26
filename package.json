@@ -1,0 +1,27 @@
+{
+  "name": "remotego",
+  "version": "1.0.0",
+  "description": "api rest",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aracelyberrocalhuerta/API.git"
+  },
+  "keywords": [
+    "api"
+  ],
+  "author": "grupo14",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aracelyberrocalhuerta/API/issues"
+  },
+  "homepage": "https://github.com/aracelyberrocalhuerta/API#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongoose": "^6.2.3"
+  }
+}
